@@ -141,7 +141,7 @@ router.post('/detectFace',(req,res,next)=>{
 				return;
 			  }
 			  var outPut = JSON.parse(body);
-			  console.log(outPut);
+			  console.log(outPut[0].faceId);
 			  if(outPut.faceId){
 				  
 					const createPersonFaceUrl ="https://westcentralus.api.cognitive.microsoft.com/face/v1.0/identify";
