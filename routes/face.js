@@ -142,7 +142,7 @@ router.post('/detectFace',(req,res,next)=>{
 			  }
 			  var outPut = JSON.parse(body);
 			  console.log(outPut[0].faceId);
-			  if(outPut.faceId){
+			  if(outPut[0].faceId){
 				  
 					const createPersonFaceUrl ="https://westcentralus.api.cognitive.microsoft.com/face/v1.0/identify";
 					const params = {
@@ -150,7 +150,7 @@ router.post('/detectFace',(req,res,next)=>{
 					const options = {
 					uri: createPersonFaceUrl,
 					qs: params,
-					body: '{"personGroupId": "hotelbookapp","faceIds":["'+outPut.faceId+'"],"maxNumOfCandidatesReturned": 1,"confidenceThreshold": 0.5}',
+					body: '{"personGroupId": "hotelbookapp","faceIds":["'+outPut[0].faceId+'"],"maxNumOfCandidatesReturned": 1,"confidenceThreshold": 0.5}',
 					headers: {
 						'Content-Type': 'application/json',
 						'Ocp-Apim-Subscription-Key' : subscriptionKey
