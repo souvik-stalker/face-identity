@@ -42,7 +42,7 @@ router.post('/createPerson',(req,res,next)=>{
 				const options = {
 					uri: createPersonFaceUrl,
 					qs: params,
-					body: '{"url": "http://localhost:3000/images/'+name+'.jpg"}',
+					body: '{"url": "https://face-identify.herokuapp.com/images/'+name+'.jpg"}',
 					headers: {
 						'Content-Type': 'application/json',
 						'Ocp-Apim-Subscription-Key' : subscriptionKey
@@ -129,7 +129,7 @@ router.post('/detectFace',(req,res,next)=>{
 		const options = {
 			uri: createPersonFaceUrl,
 			qs: params,
-			body: '{"url": "http://localhost:3000/images/'+name+'.jpg"}',
+			body: '{"url": "https://face-identify.herokuapp.com/images/'+name+'.jpg"}',
 			headers: {
 				'Content-Type': 'application/json',
 				'Ocp-Apim-Subscription-Key' : subscriptionKey
