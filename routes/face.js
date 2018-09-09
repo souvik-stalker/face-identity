@@ -55,7 +55,7 @@ router.post('/createPerson',(req,res,next)=>{
 						res.status(404).json({error:error});
 						return;
 					  }
-					  res.status(200).json({message:body});
+					  res.status(200).json({message:body,personID:outPut.personId});
 					});
 			  }
 			  
